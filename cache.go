@@ -1,4 +1,6 @@
-package main
+// Package cache provides a `Cache` function
+// that add `Cache-Control` and `Expires` headers to `http.Handler`s
+package cache
 
 import (
 	"net/http"
@@ -6,6 +8,7 @@ import (
 	"time"
 )
 
+// Cache add `Cache-Control` and `Expires` headers to the specified `http.Handler`
 func Cache(days int, next http.Handler) http.Handler {
 
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -22,5 +25,3 @@ func Cache(days int, next http.Handler) http.Handler {
 		next.ServeHTTP(w, r)
 	})
 }
-
-func main() {}

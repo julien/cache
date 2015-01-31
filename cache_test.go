@@ -1,4 +1,4 @@
-package main
+package cache
 
 import (
 	"net/http"
@@ -30,4 +30,3 @@ func TestHandler(t *testing.T) {
 		t.Errorf("got %v want 200", w.Code)
 	}
 }
-
