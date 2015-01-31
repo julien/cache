@@ -22,3 +22,5 @@ func Cache(days int, next http.Handler) http.Handler {
 		next.ServeHTTP(w, r)
 	})
 }
+
+func main() {}
